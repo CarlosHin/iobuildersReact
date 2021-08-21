@@ -5,6 +5,6 @@ export const showError = error => {
         title: 'Error!',
         text: error,
         icon: 'error',
-        confirmButtonText: 'Cool'
+        confirmButtonText: 'De acuerdo'
     })
 }
