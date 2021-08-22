@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import NoLogin from '../../components/NoLogin';
 import Swal from 'sweetalert2'
 import {addBalance} from '../../actions/'
-import { showError } from '../../utils';
 
 const  Deposit = props => {
     const {myUser} = props;
@@ -23,11 +22,11 @@ const  Deposit = props => {
         
     });
     const deposit_coin = async (coin) => {
-        const { value } = await Swal.fire({
+        const { value} = await Swal.fire({
             title: 'Depositar '+ coin.name,
             showCancelButton: true,
-            html:
-                '<input id="swal-input1" class="swal2-input">',
+            input: 'text',
+            inputLabel: 'Cantidad',
             inputValidator: (value) => {
               if (!value) {
                 return 'Cantidad no válida'
@@ -35,7 +34,7 @@ const  Deposit = props => {
             },
             preConfirm: () => document.getElementById('swal-input1').value
         })
-        
+
         if (value) {
             props.addBalance({
                 email: props.myUser.email,
@@ -43,9 +42,8 @@ const  Deposit = props => {
                 value
             })
             Swal.fire(`Has depositado ${value} ${coin.simbol}`)
-        }else{
-            showError("Cantidad no válida")
         }
+        
 
     }
     return (
