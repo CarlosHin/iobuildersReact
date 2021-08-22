@@ -28,7 +28,7 @@ const  SignIn = props => {
             return;
         }
         props.addUser({name,email,password});
-        props.setMyUser({name,email,password, balance:[]});
+        props.setMyUser({name,email,password, balance:[],transactions: []});
     }
 
 
