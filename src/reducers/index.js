@@ -13,7 +13,7 @@ const reducer = (state,action) => {
         case 'ADD_USER':
             backend.users.push({
                 name, email, password, 
-                balance: []
+                balance: [], transactions: []
             })
             return {
                 ...state,
@@ -37,6 +37,12 @@ const reducer = (state,action) => {
                     
                     if(!finded) user.balance.push({
                         simbol, ammount: value
+                    })
+                    user.transactions.push({
+                        simbol: simbol,
+                        ammount: value,
+                        type: "IN",
+                        from: "DEPOSIT"
                     })
                     balanceCopy = user.balance;
                 }
@@ -64,6 +70,12 @@ const reducer = (state,action) => {
                         }
                     }
                     balanceCopy = user.balance;
+                    user.transactions.push({
+                        simbol: simbol,
+                        ammount: value,
+                        type: "OUT",
+                        from: email
+                    })
                 }
                 if(user.email === email){
                     let finded = false;
@@ -78,6 +90,12 @@ const reducer = (state,action) => {
                     }
                     if(!finded) user.balance.push({
                         simbol, ammount: value
+                    })
+                    user.transactions.push({
+                        simbol: simbol,
+                        ammount: value,
+                        type: "IN",
+                        to: myEmail
                     })
                 }
             }

@@ -8,6 +8,7 @@ import Login from './views/Login/Login';
 import Balance from './views/Balance/Balance';
 import Deposit from './views/Deposit/Deposit';
 import Send from './views/Send/Send';
+import Transactions from './views/Transactions/Transactions';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/balance" component={Balance} />
           <Route exact path="/deposit" component={Deposit} />
           <Route exact path="/send" component={Send} />
+          <Route exact path="/transactions" component={Transactions} />
           <Route component={Home} />
         </Switch>
     </BrowserRouter>

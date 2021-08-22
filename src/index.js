@@ -15,19 +15,22 @@ let backend = {
         {"simbol": "BTC", "ammount": 2},
         {"simbol": "LTC", "ammount": 20},
         {"simbol": "DOGE", "ammount": 700},
-      ]
+      ],
+      "transactions": []
     },
     {
       "name":"Ivan","email":"ivan@io.builders","password":"12345",
       "balance": [
         {"simbol": "BTC", "ammount": 2}
-      ]
+      ],
+      "transactions": []
     },
     {
       "name":"Nicole","email":"nicole@io.builders","password":"54321",
       "balance": [
         {"simbol": "ETH", "ammount": 32}
-      ]
+      ],
+      "transactions": []
     }
   ],
   "coins": [

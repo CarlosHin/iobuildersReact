@@ -4,10 +4,10 @@ import NoLogin from '../../components/NoLogin';
 
 
 const  Balance = props => {
-    const {myUser, myBalance} = props;
+    const {myUser, myBalance,coins} = props;
     if(!myUser.email) return <NoLogin/>
 
-    let balance = props.coins.map(coin => {
+    let balance = coins.map(coin => {
         const name= coin.name;
         const simbol= coin.simbol;
         let myAmmount = myBalance.find(el => el.simbol === simbol);

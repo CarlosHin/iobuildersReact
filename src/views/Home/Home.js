@@ -13,6 +13,9 @@ const  Home = props => {
                 <Link to="/balance">
                     <button className="btn-lg btn-primary mb-5">Ver balance</button> <br/>
                 </Link>
+                <Link to="/transactions">
+                    <button className="btn-lg btn-primary mb-5">Ver movimientos</button> <br/>
+                </Link>
                 <Link to="/deposit">
                     <button className="btn-lg btn-primary mb-5">Depositar Crypto</button> <br/>
                 </Link>
