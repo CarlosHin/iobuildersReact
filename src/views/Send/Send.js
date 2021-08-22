@@ -41,7 +41,6 @@ const  Send = props => {
         });
         const check = checkSend(formValues);
         if(!check.error){
-            console.log("Se envia")
             props.sendCoins(formValues)
             Swal.fire(`Has enviado ${formValues.value} ${coin.simbol} a ${formValues.email}`)
         }else{
@@ -62,8 +61,7 @@ const  Send = props => {
                 msg: "Email no encontrado"
             }
         }
-        console.log("user", user, data.simbol,data.value)
-        if(!myBalance.find(el => el.simbol === data.simbol && el.ammount >= data.value)){
+        if(!myBalance.find(el => el.simbol === data.simbol && parseFloat(el.ammount) >= parseFloat(data.value))){
             return {
                 error: true,
                 msg: "Cantidad insuficiente de " + data.simbol

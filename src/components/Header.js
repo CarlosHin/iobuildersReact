@@ -19,12 +19,12 @@ const  Header = props => {
                 </Link>
                 <div className="form-inline">
                     <Link to="/logIn">
-                        <button className="btn btn-info m-3">
+                        <button className="btn btn-info m-3" id="nav-logIn">
                             Iniciar Sesión
                         </button>
                     </Link>
                     <Link to="/signIn">
-                        <button className="btn btn-info m-3">
+                        <button className="btn btn-info m-3" id="nav-signIn">
                             Registrarse
                         </button>
                     </Link>
@@ -50,7 +50,7 @@ const  Header = props => {
                 <b className="m-3">
                   Balance total: { totalBalance} $
                 </b>
-                <button onClick={log_out} className="btn btn-danger">
+                <button onClick={log_out} className="btn btn-danger" id="nav-logOut">
                     Cerrar Sesión
                 </button>
             </div>
