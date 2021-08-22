@@ -12,7 +12,7 @@ const  Deposit = props => {
         const img ="/img/"+ coin.logo;
         return (
             <div className="col-6" key={coin.simbol}>
-                <button className="btn-lg btn-secondary mb-1" style={{"width":"100%", "height":"150px"}}
+                <button className="btn-lg btn-light mb-1" style={{"width":"100%", "height":"150px"}}
                     onClick={() => deposit_coin(coin)}
                 > 
                     <img src={img} width="50px" alt="coin_logo" className="m-1"/>
