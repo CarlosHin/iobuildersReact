@@ -18,7 +18,7 @@ let backend = {
       ]
     },
     {
-      "name":"Ivan","email":"ivan@gmail.com","password":"bbb",
+      "name":"Ivan","email":"ivan@io.builders","password":"12345",
       "balance": [
         {"simbol": "BTC", "ammount": 2}
       ]
