@@ -25,7 +25,7 @@ const  Deposit = props => {
         const { value} = await Swal.fire({
             title: 'Depositar '+ coin.name,
             showCancelButton: true,
-            input: 'text',
+            input: 'number',
             inputLabel: 'Cantidad',
             inputValidator: (value) => {
               if (!value) {

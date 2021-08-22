@@ -30,7 +30,7 @@ const  Send = props => {
             title: 'Enviar ' + coin.simbol + "<br><h5>tienes(" + totalCoins + ")</h5>",
             html:
               'Email: <input id="email" class="swal2-input">' +
-              'Cantidad: <input id="value" class="swal2-input">',
+              'Cantidad: <input id="value" class="swal2-input" type="number">',
             focusConfirm: false,
             preConfirm: () => {
               return {

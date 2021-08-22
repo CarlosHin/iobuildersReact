@@ -3,6 +3,7 @@ const reducer = (state,action) => {
     const {email,simbol, value, myEmail,name, password} = action.payload ? action.payload : {} ;
     let {backend} = state;
     let balanceCopy = [];
+    let transactionsCopy = []
     switch(action.type){
         
         case 'SET_MYUSER':
@@ -45,6 +46,7 @@ const reducer = (state,action) => {
                         from: "DEPOSIT"
                     })
                     balanceCopy = user.balance;
+                    transactionsCopy = user.transactions;
                 }
             }
             sessionStorage.setItem("backend", JSON.stringify(backend));
@@ -53,7 +55,8 @@ const reducer = (state,action) => {
                 backend: backend,
                 myUser: {
                     ...state.myUser,
-                    balance: balanceCopy
+                    balance: balanceCopy,
+                    transactions: transactionsCopy
                 }
             }
 
@@ -76,6 +79,7 @@ const reducer = (state,action) => {
                         type: "OUT",
                         from: email
                     })
+                    transactionsCopy = user.transactions;
                 }
                 if(user.email === email){
                     let finded = false;
@@ -105,7 +109,8 @@ const reducer = (state,action) => {
                 backend: backend,
                 myUser: {
                     ...state.myUser,
-                    balance: balanceCopy
+                    balance: balanceCopy,
+                    transactions: transactionsCopy
                 }
             }
             
