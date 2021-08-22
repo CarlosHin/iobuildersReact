@@ -31,8 +31,7 @@ const  Deposit = props => {
               if (!value) {
                 return 'Cantidad no válida'
               }
-            },
-            preConfirm: () => document.getElementById('swal-input1').value
+            }
         })
 
         if (value) {
