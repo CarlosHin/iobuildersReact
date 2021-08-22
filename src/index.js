@@ -22,6 +22,12 @@ let backend = {
       "balance": [
         {"simbol": "BTC", "ammount": 2}
       ]
+    },
+    {
+      "name":"Nicole","email":"nicole@io.builders","password":"54321",
+      "balance": [
+        {"simbol": "ETH", "ammount": 32}
+      ]
     }
   ],
   "coins": [
