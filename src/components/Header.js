@@ -50,6 +50,11 @@ const  Header = props => {
                 <b className="m-3">
                   Balance total: { totalBalance} $
                 </b>
+                <Link to="/home">
+                    <button className="btn btn-info m-3">
+                        Home
+                    </button>
+                </Link>
                 <button onClick={log_out} className="btn btn-danger" id="nav-logOut">
                     Cerrar Sesión
                 </button>
