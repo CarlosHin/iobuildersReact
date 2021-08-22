@@ -24,8 +24,10 @@ const  Send = props => {
         
     });
     const send_coin = async (coin) => {
+        const myCoin = myBalance.find(el => el.simbol === coin.simbol)
+        const totalCoins = myCoin ? myCoin.ammount : 0
         const { value: formValues } = await Swal.fire({
-            title: 'Enviar ' + coin.simbol,
+            title: 'Enviar ' + coin.simbol + "<br><h5>tienes(" + totalCoins + ")</h5>",
             html:
               'Email: <input id="email" class="swal2-input">' +
               'Cantidad: <input id="value" class="swal2-input">',
@@ -39,12 +41,15 @@ const  Send = props => {
               }
             }
         });
-        const check = checkSend(formValues);
-        if(!check.error){
-            props.sendCoins(formValues)
-            Swal.fire(`Has enviado ${formValues.value} ${coin.simbol} a ${formValues.email}`)
-        }else{
-            showError(check.msg);
+
+        if(formValues){
+            const check = checkSend(formValues);
+            if(!check.error){
+                props.sendCoins(formValues)
+                Swal.fire(`Has enviado ${formValues.value} ${coin.simbol} a ${formValues.email}`)
+            }else{
+                showError(check.msg);
+            }
         }
     }
     const checkSend = data =>{
